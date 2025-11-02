@@ -2,24 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>add.ai</title>
     <style>
-      html, body {
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
         margin: 0;
         padding: 0;
-        height: 100%;
+        background: #f8f9fa;
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
       }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin: 12px 0;
+      }
+
       iframe {
         width: 100%;
-        height: 100%;
+        max-width: 500px;
+        height: 90vh;
         border: none;
+        border-radius: 16px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 600px) {
+        body {
+          background: #fff;
+          justify-content: flex-start;
+        }
+
+        h2 {
+          display: none; /* optional: hides title on small screens */
+        }
+
+        iframe {
+          width: 100%;
+          height: 100vh;
+          border-radius: 0;
+          box-shadow: none;
+        }
       }
     </style>
   </head>
   <body>
+    <h2>💬 Talk to My AI Assistant</h2>
     <iframe
-      src="https://www.chatbase.co/SclEk6AQ-ykwTX5rLsztc/help"
-      frameborder="0"
+      src="https://www.chatbase.co/chatbot-iframe/SclEk6AQ-ykwTX5rLsztc"
+      title="Chatbase Chatbot"
+      allow="microphone"
+      loading="lazy"
     ></iframe>
   </body>
 </html>
+
